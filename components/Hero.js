@@ -1,10 +1,10 @@
-import * as React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Map from "@/components/Map";
+import VectorGrid from "@/components/VectorGrid";
 
 export default function Hero() {
   const markersData = [{
@@ -41,6 +41,7 @@ export default function Hero() {
             Explore our cutting-edge dashboard, delivering high-quality solutions tailored to your needs. <br/>
             Elevate your experience with top-tier features and services.
           </Typography>
+          <VectorGrid/>
           <Map markers={markersData}/>
           <Typography variant="caption" textAlign="center" sx={{opacity: 0.8}}>
             By &quot;adding coordinates&quot; you agree to our&nbsp;<Link href="#" color="primary">Terms &
