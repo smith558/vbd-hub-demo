@@ -1,6 +1,14 @@
-# Tech stack
+## Features
+- fully responsive and mobile friendly
+- dark mode
+- fast network delivery optimised
+- table fields validation
+- remembers data from past visit (per browser only)
 
-## Front end
+
+## Tech stack
+
+### Front end
 - [React](https://react.dev/)
 - [Next.js](https://nextjs.org/)
 - [Emotion](https://emotion.sh/)
