@@ -4,6 +4,7 @@
 - fast network delivery optimised
 - table fields validation
 - remembers data from past visit (per browser only)
+- weather layers (temperature, wind, precipitation)
 
 
 ## Tech stack

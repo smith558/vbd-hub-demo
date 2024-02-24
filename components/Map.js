@@ -1,4 +1,4 @@
-import {MapContainer, TileLayer, Marker, Popup} from 'react-leaflet';
+import {MapContainer, TileLayer, Marker, Popup, LayersControl, LayerGroup} from 'react-leaflet';
 // leaflet.js imports must be in this order!
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css';
@@ -7,6 +7,8 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 
 const defaultZoom = 2;
+const apiKey = process.env.NEXT_PUBLIC_WEATHER_API;
+const fixCORS = 'https://corsproxy.io/?';
 
 const Map = ({markers, wheelZoom = false, defaultPosition = [25.50, -7.79]}) => {
   return <>
@@ -17,13 +19,35 @@ const Map = ({markers, wheelZoom = false, defaultPosition = [25.50, -7.79]}) => 
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
-          {markers.map((marker, index) => <Marker key={index} position={marker.position}>
-            <Popup>
-              <b>{marker.name}</b>
-              <br/>
-              {marker.description}
-            </Popup>
-          </Marker>)}
+          <LayersControl position="topright">
+            <LayersControl.Overlay checked name="Markers">
+              <LayerGroup>
+                {markers.map((marker, index) => <Marker key={index} position={marker.position}>
+                  <Popup>
+                    <b>{marker.name}</b>
+                    <br/>
+                    {marker.description}
+                  </Popup>
+                </Marker>)}
+              </LayerGroup>
+            </LayersControl.Overlay>
+            <LayersControl.Overlay name="Weather - Temperature">
+              <TileLayer
+                url={`https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=${apiKey}`}/>
+            </LayersControl.Overlay>
+            <LayersControl.Overlay name="Weather - Precipitation">
+              <TileLayer
+                url={`https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=${apiKey}`}/>
+            </LayersControl.Overlay>
+            <LayersControl.Overlay checked name="Weather - Wind speed">
+              <TileLayer
+                url={`https://tile.openweathermap.org/map/wind_new/{z}/{x}/{y}.png?appid=${apiKey}`}/>
+            </LayersControl.Overlay>
+            <LayersControl.Overlay name="Weather - Pressure">
+              <TileLayer
+                url={`https://tile.openweathermap.org/map/pressure_new/{z}/{x}/{y}.png?appid=${apiKey}`}/>
+            </LayersControl.Overlay>
+          </LayersControl>
         </MapContainer>
       </Container>
     </Box>
