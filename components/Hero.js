@@ -1,16 +1,9 @@
-import * as React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import Map from "@/components/Map";
 
 export default function Hero() {
-  const markersData = [{
-    position: [51.505, -0.09], name: 'Marker 1', description: 'This is the first marker'
-  }, {position: [51.48, -0.1], name: 'Marker 2', description: 'Another interesting place'}];
-
   return <>
     <Box
       id="hero"
@@ -40,11 +33,6 @@ export default function Hero() {
           <Typography variant="body1" textAlign="center" color="text.secondary">
             Explore our cutting-edge dashboard, delivering high-quality solutions tailored to your needs. <br/>
             Elevate your experience with top-tier features and services.
-          </Typography>
-          <Map markers={markersData}/>
-          <Typography variant="caption" textAlign="center" sx={{opacity: 0.8}}>
-            By &quot;adding coordinates&quot; you agree to our&nbsp;<Link href="#" color="primary">Terms &
-            Conditions</Link>.
           </Typography>
         </Stack>
       </Container>
