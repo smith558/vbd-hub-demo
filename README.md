@@ -7,10 +7,11 @@
 - [x] table fields validation
 - [ ] remembers data from past visit (per browser only)
 - [x] weather layers (temperature, wind, precipitation)
-- [ ] deployed on a live domain
+- [x] deployed on a live domain
+- [x] custom domain
 - [ ] file upload for bulk upload of markers
 - [ ] adding markers via map component
-- [ ] GitHub integration for automatic  deployment
+- [x] GitHub integration for automatic  deployment
 
 
 ## Tech stack
@@ -27,5 +28,6 @@
 
 ### Back end & deployment
 - [Next.js](https://nextjs.org/)
+- [namecheap](https://www.namecheap.com/)
 - [Vercel](https://vercel.com/)
 - [GitHub deployment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)
