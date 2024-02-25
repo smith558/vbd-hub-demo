@@ -10,10 +10,13 @@ import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
 import getTheme from '../getTheme';
 import {useState} from "react";
-import Map from "@/components/Map";
 import AdvancedTable from "@/components/AdvancedTable";
 import {randomId} from "@mui/x-data-grid-generator";
 import {Alert, Snackbar} from "@mui/material";
+import dynamic from 'next/dynamic'
+
+// Client Components:
+const Map = dynamic(() => import('../components/Map'), { ssr: false })
 
 const initialRows = [
   {id: randomId(), vectorName: 'Aedes aegypti', vectorDate: new Date(), latitude: 11.12, longitude: 7.71, notes: 'Yellow fever vector'},
