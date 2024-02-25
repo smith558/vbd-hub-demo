@@ -1,10 +1,15 @@
+- total time spent: 18 hours 19 minutes
 ## Features
-- fully responsive and mobile friendly
-- dark mode
-- fast network delivery optimised
-- table fields validation
-- remembers data from past visit (per browser only)
-- weather layers (temperature, wind, precipitation)
+- [x] fully responsive and mobile friendly
+- [x] dark mode
+- [ ] system theme detection
+- [x] fast network delivery optimised
+- [x] table fields validation
+- [ ] remembers data from past visit (per browser only)
+- [x] weather layers (temperature, wind, precipitation)
+- [ ] deployed on a live domain
+- [ ] file upload for bulk upload of markers
+- [ ] adding markers via map component
 
 
 ## Tech stack
@@ -16,3 +21,9 @@
 - [MUI](https://mui.com/)
 - [Flaticon](https://www.flaticon.com/)
 - [Leaflet.js](https://leafletjs.com/)
+- [OpenWeather](https://openweathermap.org/)
+- [React Leaflet](https://react-leaflet.js.org/)
+
+### Back end & deployment
+- [Next.js](https://nextjs.org/)
+- [Vercel](https://vercel.com/)
