@@ -1,4 +1,7 @@
 - total time spent: 18 hours 19 minutes
+- live on [vectorhub.bio](https://vectorhub.bio/)
+- staging domain [vbd-hub-demo.vercel.app](https://vbd-hub-demo.vercel.app/)
+
 ## Features
 - [x] fully responsive and mobile friendly
 - [x] dark mode
