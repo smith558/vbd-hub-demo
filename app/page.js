@@ -9,7 +9,7 @@ import Features from '../components/Features';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
 import getTheme from '../getTheme';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import AdvancedTable from "@/components/AdvancedTable";
 import {randomId} from "@mui/x-data-grid-generator";
 import {Alert, Snackbar} from "@mui/material";
@@ -26,6 +26,22 @@ const initialRows = [
 export default function Home() {
   const [mode, setMode] = useState('light');
   const theme = createTheme(getTheme(mode));
+
+  // Automatically detect system theme
+  useEffect(() => {
+    const detectThemePreference = () => {
+      setMode(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    };
+
+    detectThemePreference();
+
+    // Set up a theme change listener to update the state when the user changes their system theme setting
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e) => setMode(e.matches ? 'dark' : 'light');
+
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
 
   const [rows, setRows] = useState(initialRows);
   const [snackbar, setSnackbar] = useState({show: false, message: ''});
