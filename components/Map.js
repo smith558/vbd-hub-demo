@@ -5,12 +5,14 @@ import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import 'leaflet-defaulticon-compatibility';
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
+import {memo} from "react";
 
 const defaultZoom = 2;
 const apiKey = process.env.NEXT_PUBLIC_WEATHER_API;
 const fixCORS = 'https://corsproxy.io/?';
 
-const Map = ({markers, wheelZoom = false, defaultPosition = [25.50, -7.79]}) => {
+const Map = memo(
+  function Map({markers, wheelZoom = false, defaultPosition = [25.50, -7.79]}) {
   return <>
     <Box>
       <Container>
@@ -56,6 +58,6 @@ const Map = ({markers, wheelZoom = false, defaultPosition = [25.50, -7.79]}) => 
       </Container>
     </Box>
   </>;
-};
+});
 
 export default Map;
