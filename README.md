@@ -10,6 +10,7 @@
 - [ ] deployed on a live domain
 - [ ] file upload for bulk upload of markers
 - [ ] adding markers via map component
+- [ ] GitHub integration for automatic  deployment
 
 
 ## Tech stack
@@ -27,3 +28,4 @@
 ### Back end & deployment
 - [Next.js](https://nextjs.org/)
 - [Vercel](https://vercel.com/)
+- [GitHub deployment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)
