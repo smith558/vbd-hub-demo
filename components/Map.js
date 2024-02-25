@@ -17,7 +17,7 @@ const Map = ({markers, wheelZoom = false, defaultPosition = [25.50, -7.79]}) => 
         <MapContainer center={defaultPosition} zoom={defaultZoom} scrollWheelZoom={wheelZoom}
                       style={{height: '400px', border: '2px solid lightblue', borderRadius: '4px'}}>
           <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright target="_blank"">OpenStreetMap</a>'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
           <LayersControl position="topright">
             <LayersControl.Overlay checked name="Markers">
@@ -33,18 +33,22 @@ const Map = ({markers, wheelZoom = false, defaultPosition = [25.50, -7.79]}) => 
             </LayersControl.Overlay>
             <LayersControl.Overlay name="Weather - Temperature">
               <TileLayer
+                attribution='<a href="https://openweathermap.org/" target="_blank">OpenWeather</a>'
                 url={`https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=${apiKey}`}/>
             </LayersControl.Overlay>
             <LayersControl.Overlay name="Weather - Precipitation">
               <TileLayer
+                attribution='<a href="https://openweathermap.org/" target="_blank">OpenWeather</a>'
                 url={`https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=${apiKey}`}/>
             </LayersControl.Overlay>
             <LayersControl.Overlay checked name="Weather - Wind speed">
               <TileLayer
+                attribution='<a href="https://openweathermap.org/" target="_blank">OpenWeather</a>'
                 url={`https://tile.openweathermap.org/map/wind_new/{z}/{x}/{y}.png?appid=${apiKey}`}/>
             </LayersControl.Overlay>
             <LayersControl.Overlay name="Weather - Pressure">
               <TileLayer
+                attribution='<a href="https://openweathermap.org/" target="_blank">OpenWeather</a>'
                 url={`https://tile.openweathermap.org/map/pressure_new/{z}/{x}/{y}.png?appid=${apiKey}`}/>
             </LayersControl.Overlay>
           </LayersControl>
