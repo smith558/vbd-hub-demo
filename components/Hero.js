@@ -2,8 +2,9 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import {memo} from "react";
 
-export default function Hero() {
+const Hero = memo(function Hero() {
   return <>
     <Box
       id="hero"
@@ -38,4 +39,6 @@ export default function Hero() {
       </Container>
     </Box>
   </>;
-}
+});
+
+export default Hero;

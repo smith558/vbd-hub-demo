@@ -6,6 +6,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import FacebookIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import {memo} from "react";
 
 const logoStyle = {
   width: '140px', height: 'auto',
@@ -21,7 +22,7 @@ function Copyright() {
   </>;
 }
 
-export default function Footer() {
+const Footer = memo(function Footer() {
   return <>
     <Container
       sx={{
@@ -67,4 +68,6 @@ export default function Footer() {
       </Box>
     </Container>
   </>;
-}
+});
+
+export default Footer;
