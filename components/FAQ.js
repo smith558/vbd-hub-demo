@@ -7,9 +7,9 @@ import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import {useState} from "react";
+import {memo, useState} from "react";
 
-export default function FAQ() {
+const FAQ = memo(function FAQ() {
   const [expanded, setExpanded] = useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
@@ -99,4 +99,6 @@ export default function FAQ() {
       </Box>
     </Container>
   </>;
-}
+});
+
+export default FAQ;

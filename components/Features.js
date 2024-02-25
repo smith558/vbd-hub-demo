@@ -11,7 +11,7 @@ import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import DevicesRoundedIcon from '@mui/icons-material/DevicesRounded';
 import EdgesensorHighRoundedIcon from '@mui/icons-material/EdgesensorHighRounded';
 import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
-import {useState} from "react";
+import {memo, useState} from "react";
 
 const items = [{
   icon: <ViewQuiltRoundedIcon/>,
@@ -33,7 +33,7 @@ const items = [{
   imageDark: 'url("/static/images/templates/templates-images/devices-dark.png")',
 },];
 
-export default function Features() {
+const Features = memo(function Features() {
   const [selectedItemIndex, setSelectedItemIndex] = useState(0);
 
   const handleItemClick = (index) => {
@@ -197,4 +197,6 @@ export default function Features() {
       </Grid>
     </Grid>
   </Container>;
-}
+});
+
+export default Features;
