@@ -7,6 +7,7 @@
 - [x] dark mode
 - [ ] system theme detection
 - [x] fast network delivery optimised
+- [ ] HTTPS secure connection
 - [x] table fields validation
 - [ ] remembers data from past visit (per browser only)
 - [x] weather layers (temperature, wind, precipitation)
