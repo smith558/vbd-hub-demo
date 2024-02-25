@@ -1,3 +1,5 @@
+# [vectorhub.bio](https://vectorhub.bio/)
+
 - total time spent: 18 hours 19 minutes
 - live on [vectorhub.bio](https://vectorhub.bio/)
 - staging domain [vbd-hub-demo.vercel.app](https://vbd-hub-demo.vercel.app/)
@@ -16,6 +18,7 @@
 - [ ] file upload for bulk upload of markers
 - [ ] adding markers via map component
 - [x] GitHub integration for automatic  deployment
+- [x] pull request previews integration (an [example](https://github.com/smith558/vbd-hub-demo/pull/2#issuecomment-1962944862))
 
 
 ## Tech stack
@@ -32,6 +35,6 @@
 
 ### Back end & deployment
 - [Next.js](https://nextjs.org/)
-- [namecheap](https://www.namecheap.com/)
 - [Vercel](https://vercel.com/)
 - [GitHub deployment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)
+- [namecheap](https://www.namecheap.com/)
