@@ -328,7 +328,7 @@ const AdvancedTable = memo(
     },];
 
     return <>
-      <Container sx={{marginBottom: '15px', width: '100%', height: 414.5}}>
+      <Container sx={{marginBottom: '15px', width: '100%', height: 414.5, '& .scientific-name': {fontStyle: 'italic'}}}>
         <DataGrid
           autoHeight={false} // turn on and remove `height: 414.5` in case of layout issues
           sx={{'--DataGrid-overlayHeight': '250px'}}
