@@ -60,3 +60,7 @@
 5. run development server locally `npm run dev`
 6. go to http://localhost:3000/
 7. the app is running! (the file upload feature will NOT work as it is back end based)
+
+### Performance becnhmarking
+https://pagespeed.web.dev/analysis/https-www-vectorhub-bio/htztfpnesq?form_factor=desktop
+![image](https://github.com/smith558/vbd-hub-demo/assets/44023416/376e8c57-2438-49a4-b403-695279be6b94)
