@@ -20,6 +20,7 @@ import {
 } from '@mui/x-data-grid-generator';
 import Container from "@mui/material/Container";
 import {memo, useState} from "react";
+import FileUpload from "@/components/FileUpload";
 
 const roles = ['Market', 'Finance', 'Development'];
 const randomRole = () => {
@@ -53,6 +54,19 @@ export const demoColumns = [
     valueOptions: ['Market', 'Finance', 'Development'],
   }
 ];
+
+// TODO validation
+async function parseJsonResponseWithDates(response) {
+  const data = await response.json();
+
+  // Convert vectorDate strings to Date objects
+  return data.map(item => {
+    if (item.vectorDate) {
+      item.vectorDate = new Date(item.vectorDate);
+    }
+    return item;
+  });
+}
 
 export const demoRows = [
   {
@@ -92,24 +106,50 @@ export const demoRows = [
   },
 ];
 
-function EditToolbar(props) {
-  const {setRows, setRowModesModel, fieldToFocus} = props;
-  const handleClick = () => {
+const EditToolbar = memo(function EditToolbar(props) {
+  const {onNewRows, setRowModesModel, fieldToFocus, dataRows} = props;
+  const handleAdd = () => {
     const id = randomId();
-    setRows((oldRows) => [...oldRows, {id, isNew: true}]);
+    onNewRows((oldRows) => [...oldRows, {id, isNew: true}]);
     setRowModesModel((oldModel) => ({
       ...oldModel, [id]: {mode: GridRowModes.Edit, fieldToFocus: fieldToFocus},
     }));
   };
 
+  const handleFileChange = async (e) => {
+    const file = e.target.files[0];
+
+    const formData = new FormData();
+    formData.append('csvFile', file);
+
+    try {
+      const response = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        const data = await parseJsonResponseWithDates(response);
+        console.log('Processed CSV data:', data);
+        // Handle the processed data
+        onNewRows([...data, ...dataRows]);  // TODO validation
+      } else {
+        console.error('Error processing CSV:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error uploading or processing CSV:', error);
+    }
+  }
+
   return <>
     <GridToolbarContainer>
-      <Button color="primary" startIcon={<AddIcon/>} onClick={handleClick}>
+      <FileUpload accept={'.csv'} onChange={handleFileChange}/>
+      <Button color="primary" startIcon={<AddIcon/>} onClick={handleAdd}>
         Add record
       </Button>
     </GridToolbarContainer>
   </>;
-}
+});
 
 const AdvancedTable = memo(
   function AdvancedTable(
@@ -123,7 +163,6 @@ const AdvancedTable = memo(
     })
   {
     const [rowModesModel, setRowModesModel] = useState({});
-    const [rows, setRows] = useState(dataRows);
 
 
     const handleRowEditStop = (params, event) => {
@@ -138,12 +177,11 @@ const AdvancedTable = memo(
 
     const handleSaveClick = (id) => () => {
       setRowModesModel({...rowModesModel, [id]: {mode: GridRowModes.View}});
-      validateRow(rows.filter((r) => r.id === id));
+      validateRow(dataRows.filter((r) => r.id === id));
     };
 
     const handleDeleteClick = (id) => () => {
-      const newRows = rows.filter((row) => row.id !== id)
-      setRows(newRows);
+      const newRows = dataRows.filter((row) => row.id !== id)
       onNewRows(newRows);
     };
 
@@ -152,19 +190,18 @@ const AdvancedTable = memo(
         ...rowModesModel, [id]: {mode: GridRowModes.View, ignoreModifications: true},
       });
 
-      const editedRow = rows.find((row) => row.id === id);
+      const editedRow = dataRows.find((row) => row.id === id);
       if (editedRow.isNew) {
-        setRows(rows.filter((row) => row.id !== id));
+        onNewRows(dataRows.filter((row) => row.id !== id));
       }
     };
 
     const processRowUpdate = (newRow) => {
       const updatedRow = {...newRow, isNew: false};
-      const newRows = rows.map((row) => (row.id === newRow.id ? updatedRow : row));
+      const newRows = dataRows.map((row) => (row.id === newRow.id ? updatedRow : row));
 
       if (newRow.longitude === undefined) return;
 
-      setRows(newRows);
       onNewRows(newRows);
       return updatedRow;
     };
@@ -219,10 +256,10 @@ const AdvancedTable = memo(
     },];
 
     return <>
-      <Box sx={{width: '100%'}}>
+      <Box sx={{width: '100%', height: 413, marginBottom: 5}}>
         <Container>
           <DataGrid
-            rows={rows}
+            rows={dataRows}
             columns={columns}
             editMode="row"
             rowModesModel={rowModesModel}
@@ -234,12 +271,11 @@ const AdvancedTable = memo(
               pagination: {paginationModel: {pageSize: 5}},
             }}
             pageSizeOptions={[5, 10, 25]}
-            // autoPageSize={false}
             slots={{
               toolbar: EditToolbar,
             }}
             slotProps={{
-              toolbar: {setRows, setRowModesModel, fieldToFocus},
+              toolbar: {onNewRows, setRowModesModel, fieldToFocus, dataRows},
             }}
           />
         </Container>
