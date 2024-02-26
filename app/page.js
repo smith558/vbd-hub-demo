@@ -61,7 +61,7 @@ export default function Home() {
   }
 
   const columns = [
-    {field: 'vectorName', headerName: 'Vector name', width: 155, editable: true},
+    {field: 'vectorName', headerName: 'Vector name', width: 155, editable: true, cellClassName: 'scientific-name'},
     {field: 'vectorDate', headerName: 'Date', type: 'date', width: 110, editable: true},
     {field: 'latitude', headerName: 'Latitude', type: 'number', width: 100, editable: true, preProcessEditCellProps: checkLatitude},
     {field: 'longitude', headerName: 'Longitude', type: 'number', width: 100, editable: true, preProcessEditCellProps: checkLongitude},

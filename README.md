@@ -15,7 +15,8 @@
 - [x] weather layers (temperature, wind, precipitation)
 - [x] deployed on a live domain
 - [x] custom domain
-- [ ] file upload for bulk upload of markers
+- [x] file upload for bulk upload of markers (in `.csv`)
+- [x] file upload validation
 - [ ] adding markers via map component
 - [x] GitHub integration for automatic deployment
 - [x] pull request previews integration (an [example](https://github.com/smith558/vbd-hub-demo/pull/2#issuecomment-1962944862))
@@ -35,8 +36,10 @@
 - [React Leaflet](https://react-leaflet.js.org/)
 
 ### Back end & deployment
+- [Node.js](https://nodejs.org/en/)
 - [Next.js](https://nextjs.org/)
-- [Vercel](https://vercel.com/)
+- [Vercel hosting](https://vercel.com/)
+- [Vercel Serverless Edge Functions](https://vercel.com/docs/functions)
 - [GitHub deployment & previews - VercelBot](https://github.com/apps/vercel)
 - [namecheap](https://www.namecheap.com/)
 - [JSON](https://www.json.org/)
