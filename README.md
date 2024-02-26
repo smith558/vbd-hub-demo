@@ -1,6 +1,10 @@
 # [vectorhub.bio](https://vectorhub.bio/)
 
-- total time spent: 21 hours 19 minutes
+<center>
+  <img src="./public/favicon.png" alt="Image Description" width="200">
+</center>
+
+- total time spent: 29 hours
 - live on [vectorhub.bio](https://vectorhub.bio/)
 - staging domain [vbd-hub-demo.vercel.app](https://vbd-hub-demo.vercel.app/)
 
@@ -18,8 +22,10 @@
 - [x] file upload for bulk upload of markers (in `.csv`)
 - [x] file upload validation
 - [ ] adding markers via map component
+- [ ] account page with saved markers
 - [x] GitHub integration for automatic deployment
 - [x] pull request previews integration (an [example](https://github.com/smith558/vbd-hub-demo/pull/2#issuecomment-1962944862))
+- [x] firewall, DDoS protection, and CDN
 
 ## Tech stack
 
@@ -43,6 +49,7 @@
 - [GitHub deployment & previews - VercelBot](https://github.com/apps/vercel)
 - [namecheap](https://www.namecheap.com/)
 - [JSON](https://www.json.org/)
+- [Cloudflare](https://www.cloudflare.com/en-gb/security/)
 
 ### Local build instructions (if needed)
 

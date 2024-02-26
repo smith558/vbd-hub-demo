@@ -9,12 +9,12 @@ import Features from '../components/Features';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
 import getTheme from '../getTheme';
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import AdvancedTable from "@/components/AdvancedTable";
 import {randomId} from "@mui/x-data-grid-generator";
 import {Alert, Snackbar} from "@mui/material";
 import dynamic from 'next/dynamic'
-import {useLocalStorage} from "usehooks-ts";
+import {useDarkMode, useLocalStorage} from "usehooks-ts";
 
 function serializer(value) {
   if (value === undefined) {
@@ -59,24 +59,8 @@ const initialRows = [
 ]
 
 export default function Home() {
-  const [mode, setMode] = useState('light');
-  const theme = createTheme(getTheme(mode));
-
-  // Automatically detect system theme
-  useEffect(() => {
-    const detectThemePreference = () => {
-      setMode(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    };
-
-    detectThemePreference();
-
-    // Set up a theme change listener to update the state when the user changes their system theme setting
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (e) => setMode(e.matches ? 'dark' : 'light');
-
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
+  const { isDarkMode, toggle, enable, disable } = useDarkMode();
+  const theme = createTheme(getTheme(isDarkMode ? 'dark' : 'light'));
 
   const [rows, setRows] = useLocalStorage('vbd-rows', initialRows, {
     initializeWithValue: true, serializer: serializer, deserializer: deserializer});
@@ -113,11 +97,6 @@ export default function Home() {
       description: row.notes || `This is ${row.vectorName}`, // Providing a default description if notes are empty
     }));
 
-
-  const toggleColorMode = () => {
-    setMode((prev) => (prev === 'dark' ? 'light' : 'dark'));
-  };
-
   const handleNewRows = (newRows) => {
     console.log('new rows', newRows);
     setRows(newRows);
@@ -138,7 +117,7 @@ export default function Home() {
   return <>
     <ThemeProvider theme={theme}>
       <CssBaseline/>
-      <TopAppBar mode={mode} toggleColorMode={toggleColorMode}/>
+      <TopAppBar mode={isDarkMode ? 'dark' : 'light'} toggleColorMode={toggle}/>
       <Hero/>
       <AdvancedTable dataColumns={columns} dataRows={rows} onNewRows={handleNewRows} fieldToFocus={'vectorName'}
                      validateRow={validateRow}/>
