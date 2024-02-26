@@ -7,7 +7,7 @@
 ## Features
 - [x] fully responsive and mobile friendly
 - [x] dark mode
-- [ ] system theme detection
+- [x] system theme detection
 - [x] fast network delivery optimised
 - [x] HTTPS secure connection
 - [x] table fields validation
@@ -40,3 +40,13 @@
 - [GitHub deployment & previews - VercelBot](https://github.com/apps/vercel)
 - [namecheap](https://www.namecheap.com/)
 - [JSON](https://www.json.org/)
+
+### Local build instructions (if needed)
+
+1. install Node.js by following [guide](https://nodejs.org/en)
+2. clone repository `git clone https://github.com/smith558/vbd-hub-demo.git`
+3. `cd vbd-hub-demo`
+4. install packages `npm install`
+5. run development server locally `npm run dev`
+6. go to http://localhost:3000/
+7. the app is running! (the file upload feature will NOT work as it is back end based)
