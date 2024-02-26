@@ -2,7 +2,7 @@
 
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
-import {ThemeProvider, createTheme} from '@mui/material/styles';
+import {createTheme, ThemeProvider} from '@mui/material/styles';
 import TopAppBar from '../components/TopAppBar';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
@@ -14,6 +14,41 @@ import AdvancedTable from "@/components/AdvancedTable";
 import {randomId} from "@mui/x-data-grid-generator";
 import {Alert, Snackbar} from "@mui/material";
 import dynamic from 'next/dynamic'
+import {useLocalStorage} from "usehooks-ts";
+
+function serializer(value) {
+  if (value === undefined) {
+    // Handle potential undefined values
+    return null;
+  }
+
+  return JSON.stringify(value, (key, value) => {
+    if (value instanceof Date) {
+      return value.toISOString(); // Convert Dates to ISO strings
+    }
+    return value; // Leave other values as they are
+  });
+}
+
+function deserializer(value) {
+  if (value === null) {
+    // Handle potential null values
+    return undefined;
+  }
+
+  return JSON.parse(value, (key, value) => {
+    if (typeof value === 'string' && isISODateString(value)) {
+      return new Date(value); // Convert ISO strings back to Dates
+    }
+    return value; // Leave other values as they are
+  });
+}
+
+// Helper function to check for ISO Date strings
+function isISODateString(str) {
+  // ISO Date validation here (TODO cloud be more robust)
+  return /^\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d(\.\d+)?([+-][0-2]\d:[0-5]\d|Z)$/.test(str);
+}
 
 // Client Components:
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -43,7 +78,8 @@ export default function Home() {
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
-  const [rows, setRows] = useState(initialRows);
+  const [rows, setRows] = useLocalStorage('vbd-rows', initialRows, {
+    initializeWithValue: true, serializer: serializer, deserializer: deserializer});
   const [snackbar, setSnackbar] = useState({show: false, message: ''});
 
   // latitude ranges from -90 to 90 degrees

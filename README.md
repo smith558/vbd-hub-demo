@@ -11,7 +11,7 @@
 - [x] fast network delivery optimised
 - [x] HTTPS secure connection
 - [x] table fields validation
-- [ ] remembers data from past visit (per browser only)
+- [x] preserve data between visits (per browser only) using cookie-like persistent object
 - [x] weather layers (temperature, wind, precipitation)
 - [x] deployed on a live domain
 - [x] custom domain
