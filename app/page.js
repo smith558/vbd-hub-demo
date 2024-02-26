@@ -3,7 +3,7 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import {ThemeProvider, createTheme} from '@mui/material/styles';
-import AppAppBar from '../components/AppAppBar';
+import TopAppBar from '../components/TopAppBar';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
 import FAQ from '../components/FAQ';
@@ -102,7 +102,7 @@ export default function Home() {
   return <>
     <ThemeProvider theme={theme}>
       <CssBaseline/>
-      <AppAppBar mode={mode} toggleColorMode={toggleColorMode}/>
+      <TopAppBar mode={mode} toggleColorMode={toggleColorMode}/>
       <Hero/>
       <AdvancedTable dataColumns={columns} dataRows={rows} onNewRows={handleNewRows} fieldToFocus={'vectorName'}
                      validateRow={validateRow}/>

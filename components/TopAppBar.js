@@ -13,7 +13,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from './ToggleColorMode';
 import {memo, useState} from "react";
 
-const AppAppBar = memo(function AppAppBar({mode, toggleColorMode}) {
+const TopAppBar = memo(function AppAppBar({mode, toggleColorMode}) {
   const [open, setOpen] = useState(false);
 
   const toggleDrawer = (newOpen) => () => {
@@ -117,8 +117,8 @@ const AppAppBar = memo(function AppAppBar({mode, toggleColorMode}) {
   </>;
 });
 
-AppAppBar.propTypes = {
+TopAppBar.propTypes = {
   mode: PropTypes.oneOf(['dark', 'light']).isRequired, toggleColorMode: PropTypes.func.isRequired,
 };
 
-export default AppAppBar;
+export default TopAppBar;
