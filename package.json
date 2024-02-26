@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "vercel dev": "vercel dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -27,6 +28,8 @@
   "devDependencies": {
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
-    "prop-types": "^15.8.1"
+    "papaparse": "^5.4.1",
+    "prop-types": "^15.8.1",
+    "vercel": "latest"
   }
 }
