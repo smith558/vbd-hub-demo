@@ -51,7 +51,7 @@
 - [JSON](https://www.json.org/)
 - [Cloudflare](https://www.cloudflare.com/en-gb/security/)
 
-### Local build instructions (if needed)
+## Local build instructions (if needed)
 
 1. install Node.js by following [guide](https://nodejs.org/en)
 2. clone repository `git clone https://github.com/smith558/vbd-hub-demo.git`
@@ -61,6 +61,6 @@
 6. go to http://localhost:3000/
 7. the app is running! (the file upload feature will NOT work as it is back end based)
 
-### Performance becnhmarking
+## Performance becnhmarking
 https://pagespeed.web.dev/analysis/https-www-vectorhub-bio/htztfpnesq?form_factor=desktop
 ![image](https://github.com/smith558/vbd-hub-demo/assets/44023416/376e8c57-2438-49a4-b403-695279be6b94)
