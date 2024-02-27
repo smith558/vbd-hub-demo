@@ -37,9 +37,9 @@ const Footer = memo(function Footer() {
     >
       <Box sx={{display: 'flex', justifyContent: 'space-between', width: '100%'}}>
         <div>
-          <Link component={NextLink} href='privacy' color="text.secondary">Privacy Policy</Link>
+          <Link component={NextLink} href='/privacy' color="text.secondary">Privacy Policy</Link>
           <Typography display="inline" sx={{mx: 0.5, opacity: 0.5}}>&nbsp;•&nbsp;</Typography>
-          <Link component={NextLink} href='terms' color="text.secondary">Terms of Service</Link>
+          <Link component={NextLink} href='/terms' color="text.secondary">Terms of Service</Link>
           <Copyright/>
         </div>
         <Stack
