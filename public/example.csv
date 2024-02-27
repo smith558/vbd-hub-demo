@@ -1,0 +1,6 @@
+vectorName,vectorDate,latitude,longitude,notes
+Anopheles gambiae,2024-05-02T07:30:00Z,-44.63,-41.28,West Nile virus
+Aedes albopictus,2024-11-18T12:15:00Z,33.74,-84.38,Zika virus
+Culex pipiens,2024-08-22T23:00:00Z,52.52,13.40,West Nile virus
+Triatoma infestans,2024-06-15T16:35:00Z,-23.55,-46.63,Chagas disease
+Lutzomyia longipalpis,2024-01-30T09:45:00Z,-10.91,-37.07,Leishmaniasis
