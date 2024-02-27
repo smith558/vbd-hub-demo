@@ -2,6 +2,7 @@
 
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
+import Link from "@mui/material/Link";
 
 export default function Privacy() {
   return <>
@@ -78,9 +79,9 @@ export default function Privacy() {
             Service or from the Service infrastructure itself (for example, the duration of a page visit).</p>
         </li>
         <li>
-          <p><strong>Website</strong> refers to VBD Hub, accessible from <a href="https://www.vectorhub.bio"
+          <p><strong>Website</strong> refers to VBD Hub, accessible from <Link href="https://www.vectorhub.bio"
                                                                             rel="external nofollow noopener"
-                                                                            target="_blank">https://www.vectorhub.bio</a>
+                                                                            target="_blank">https://www.vectorhub.bio</Link>
           </p>
         </li>
         <li>
@@ -126,9 +127,9 @@ export default function Privacy() {
       </ul>
       <p>Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies. Persistent Cookies remain on Your
         personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close
-        Your web browser. Learn more about cookies on the <a
+        Your web browser. Learn more about cookies on the <Link
           href="https://www.freeprivacypolicy.com/blog/sample-privacy-policy-template/#Use_Of_Cookies_And_Tracking"
-          target="_blank">Free Privacy Policy website</a> article.</p>
+          target="_blank">Free Privacy Policy website</Link> article.</p>
       <p>We use both Session and Persistent Cookies for the purposes set out below:</p>
       <ul>
         <li>
@@ -296,8 +297,8 @@ export default function Privacy() {
       <h2>Contact Us</h2>
       <p>If you have any questions about this Privacy Policy, You can contact us:</p>
       <ul>
-        <li>By visiting this page on our website: <a href="https://stanislav.gq" rel="external nofollow noopener"
-                                                     target="_blank">https://stanislav.gq</a></li>
+        <li>By visiting this page on our website: <Link href="https://stanislav.gq" rel="external nofollow noopener"
+                                                     target="_blank">https://stanislav.gq</Link></li>
       </ul>
     </Container>
   </>
