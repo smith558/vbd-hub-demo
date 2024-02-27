@@ -16,7 +16,7 @@ function Copyright() {
   return <>
     <Typography variant="body2" color="text.secondary" mt={1}>
       {'Copyright © '}
-      <Link href="https://stanislav.gq/">Stanley&nbsp;</Link>
+      <Link href="https://stanislav.gq/" target='_blank' rel="noopener">Stanley&nbsp;</Link>
       {new Date().getFullYear()}
     </Typography>
   </>;
@@ -51,6 +51,8 @@ const Footer = memo(function Footer() {
           <IconButton
             color="inherit"
             href="https://github.com/smith558"
+            target='_blank'
+            rel="noopener"
             aria-label="GitHub"
             sx={{alignSelf: 'center'}}
           >
@@ -59,6 +61,7 @@ const Footer = memo(function Footer() {
           <IconButton
             color="inherit"
             href="https://www.linkedin.com/in/stanislav-modrak/"
+            target='_blank'
             aria-label="LinkedIn"
             sx={{alignSelf: 'center'}}
           >

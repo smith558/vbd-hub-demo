@@ -25,7 +25,7 @@
 - [ ] account page with saved markers
 - [x] GitHub integration for automatic deployment
 - [x] pull request previews integration (an [example](https://github.com/smith558/vbd-hub-demo/pull/2#issuecomment-1962944862))
-- [x] firewall, DDoS protection, and CDN
+- [x] firewall, DDoS & Bot protection, and CDN
 
 ## Tech stack
 
