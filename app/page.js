@@ -1,20 +1,18 @@
 'use client'
 
-import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
-import {createTheme, ThemeProvider} from '@mui/material/styles';
 import TopAppBar from '../components/TopAppBar';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
-import getTheme from '../getTheme';
-import {useState} from "react";
+import {useContext, useState} from "react";
 import AdvancedTable from "@/components/AdvancedTable";
 import {randomId} from "@mui/x-data-grid-generator";
 import {Alert, Snackbar} from "@mui/material";
 import dynamic from 'next/dynamic'
-import {useDarkMode, useLocalStorage} from "usehooks-ts";
+import {useLocalStorage} from "usehooks-ts";
+import {LayoutContext} from "@/app/layout";
 
 function serializer(value) {
   if (value === undefined) {
@@ -59,8 +57,7 @@ const initialRows = [
 ]
 
 export default function Home() {
-  const { isDarkMode, toggle, enable, disable } = useDarkMode();
-  const theme = createTheme(getTheme(isDarkMode ? 'dark' : 'light'));
+  const { isDarkMode, toggle } = useContext(LayoutContext);
 
   const [rows, setRows] = useLocalStorage('vbd-rows', initialRows, {
     initializeWithValue: true, serializer: serializer, deserializer: deserializer});
@@ -115,23 +112,20 @@ export default function Home() {
   }
 
   return <>
-    <ThemeProvider theme={theme}>
-      <CssBaseline/>
-      <TopAppBar mode={isDarkMode ? 'dark' : 'light'} toggleColorMode={toggle}/>
-      <Hero/>
-      <AdvancedTable dataColumns={columns} dataRows={rows} onNewRows={handleNewRows} fieldToFocus={'vectorName'}
-                     validateRow={validateRow}/>
-      <Map markers={markersData} wheelZoom={true}/>
-      <Features/>
-      <Divider/>
-      <FAQ/>
-      <Divider/>
-      <Footer/>
-      <Snackbar open={snackbar.show} autoHideDuration={5000} onClose={handleSnackbarClose}>
-        <Alert onClose={handleSnackbarClose} severity="error" variant="filled" sx={{width: '100%'}}>
-          {snackbar.message}
-        </Alert>
-      </Snackbar>
-    </ThemeProvider>
+    <TopAppBar mode={isDarkMode ? 'dark' : 'light'} toggleColorMode={toggle}/>
+    <Hero/>
+    <AdvancedTable dataColumns={columns} dataRows={rows} onNewRows={handleNewRows} fieldToFocus={'vectorName'}
+                   validateRow={validateRow}/>
+    <Map markers={markersData} wheelZoom={true}/>
+    <Features/>
+    <Divider/>
+    <FAQ/>
+    <Divider/>
+    <Footer/>
+    <Snackbar open={snackbar.show} autoHideDuration={5000} onClose={handleSnackbarClose}>
+      <Alert onClose={handleSnackbarClose} severity="error" variant="filled" sx={{width: '100%'}}>
+        {snackbar.message}
+      </Alert>
+    </Snackbar>
   </>;
 }

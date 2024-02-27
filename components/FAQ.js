@@ -39,13 +39,14 @@ const FAQ = memo(function FAQ() {
         <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
           <AccordionSummary expandIcon={<ExpandMoreIcon/>} aria-controls="panel1d-content" id="panel1d-header">
             <Typography component="h3" variant="subtitle2">
-              How do I contact customer support if I have a question or issue?
+              How do I get support if I have a question or issue?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography variant="body2" gutterBottom sx={{maxWidth: {sm: '100%', md: '70%'}}}>
-              You can reach our customer support team by emailing <Link>stanislav.modrak@gmail.com</Link> or
-              calling our toll-free number. We&apos;re here to assist you promptly.
+              You can reach our support team by emailing <Link href='mailto:stanislav@vbd.bio'>stanislav@vbd.bio</Link>
+              or getting help at our <Link href='https://discourse.org'>VBD Hub Community</Link>.
+              We&apos;re happy to assist you promptly.
             </Typography>
           </AccordionDetails>
         </Accordion>

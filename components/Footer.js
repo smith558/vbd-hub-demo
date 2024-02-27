@@ -1,11 +1,12 @@
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
-import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import FacebookIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Link from "@mui/material/Link";
+import NextLink from "next/link";
 import {memo} from "react";
 
 const logoStyle = {
@@ -36,9 +37,9 @@ const Footer = memo(function Footer() {
     >
       <Box sx={{display: 'flex', justifyContent: 'space-between', width: '100%'}}>
         <div>
-          <Link color="text.secondary" href="#">Privacy Policy</Link>
+          <Link component={NextLink} href='privacy' color="text.secondary">Privacy Policy</Link>
           <Typography display="inline" sx={{mx: 0.5, opacity: 0.5}}>&nbsp;•&nbsp;</Typography>
-          <Link color="text.secondary" href='#'>Terms of Service</Link>
+          <Link component={NextLink} href='terms' color="text.secondary">Terms of Service</Link>
           <Copyright/>
         </div>
         <Stack
