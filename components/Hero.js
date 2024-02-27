@@ -32,8 +32,8 @@ const Hero = memo(function Hero() {
             &nbsp;Hub
           </Typography>
           <Typography variant="body1" textAlign="center" color="text.secondary">
-            Explore our cutting-edge dashboard, delivering high-quality solutions tailored to your needs. <br/>
-            Elevate your experience with top-tier features and services.
+            Join the collaborative fight against and research of disease vectors. Our mapping platform empowers you to share
+            sightings, analyze patterns, and drive impactful prevention strategies.
           </Typography>
         </Stack>
       </Container>
