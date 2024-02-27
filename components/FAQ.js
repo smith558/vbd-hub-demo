@@ -45,7 +45,7 @@ const FAQ = memo(function FAQ() {
           <AccordionDetails>
             <Typography variant="body2" gutterBottom sx={{maxWidth: {sm: '100%', md: '70%'}}}>
               You can reach our support team by emailing <Link href='mailto:stanislav@vbd.bio'>stanislav@vbd.bio</Link>
-              or getting help at our <Link href='https://discourse.org'>VBD Hub Community</Link>.
+              &nbsp;or getting help at our <Link href='https://discourse.org'>VBD Hub Community</Link>.
               We&apos;re happy to assist you promptly.
             </Typography>
           </AccordionDetails>
@@ -53,21 +53,24 @@ const FAQ = memo(function FAQ() {
         <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
           <AccordionSummary expandIcon={<ExpandMoreIcon/>} aria-controls="panel2d-content" id="panel2d-header">
             <Typography component="h3" variant="subtitle2">
-              Can I return the product if it doesn&apos;t meet my expectations?
+              Why should I care about vector borne diseases?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography variant="body2" gutterBottom sx={{maxWidth: {sm: '100%', md: '70%'}}}>
-              Absolutely! We offer a hassle-free return policy. If you&apos;re not
-              completely satisfied, you can return the product within [number of
-              days] days for a full refund or exchange.
+              Vector borne diseases (VBDs) are a significant global health concern, transmitted by vectors like
+              mosquitoes, ticks, and fleas. You should care because these diseases are expanding due to global travel
+              and climate change, affecting millions worldwide. Understanding and taking preventative measures against
+              VBDs can protect you, your family, and your community from illness, reduce healthcare costs, and improve
+              quality of life. Awareness and action are key to controlling these diseases and ensuring global health
+              security.
             </Typography>
           </AccordionDetails>
         </Accordion>
         <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
           <AccordionSummary expandIcon={<ExpandMoreIcon/>} aria-controls="panel3d-content" id="panel3d-header">
             <Typography component="h3" variant="subtitle2">
-              What makes your product stand out from others in the market?
+              What is an accepted file format for uploading data to the map?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
