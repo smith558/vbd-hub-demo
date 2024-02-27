@@ -2,6 +2,7 @@
 
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
+import Link from "@mui/material/Link";
 
 export default function Privacy() {
   return <>
@@ -61,9 +62,9 @@ export default function Privacy() {
             available by the Service.</p>
         </li>
         <li>
-          <p><strong>Website</strong> refers to VBD Hub, accessible from <a href="https://www.vectorhub.bio"
+          <p><strong>Website</strong> refers to VBD Hub, accessible from <Link href="https://www.vectorhub.bio"
                                                                             rel="external nofollow noopener"
-                                                                            target="_blank">https://www.vectorhub.bio</a>
+                                                                            target="_blank">https://www.vectorhub.bio</Link>
           </p>
         </li>
         <li>
@@ -175,8 +176,8 @@ export default function Privacy() {
       <h2>Contact Us</h2>
       <p>If you have any questions about these Terms and Conditions, You can contact us:</p>
       <ul>
-        <li>By visiting this page on our website: <a href="https://stanislav.gq" rel="external nofollow noopener"
-                                                     target="_blank">https://stanislav.gq</a></li>
+        <li>By visiting this page on our website: <Link href="https://stanislav.gq" rel="external nofollow noopener"
+                                                     target="_blank">https://stanislav.gq</Link></li>
       </ul>
     </Container>
   </>

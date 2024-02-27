@@ -44,9 +44,9 @@ const FAQ = memo(function FAQ() {
           </AccordionSummary>
           <AccordionDetails>
             <Typography variant="body2" gutterBottom sx={{maxWidth: {sm: '100%', md: '70%'}}}>
-              You can reach our support team by emailing <Link href='mailto:stanislav@vbd.bio'>stanislav@vbd.bio</Link>
-              &nbsp;or getting help at our <Link href='https://discourse.org'>VBD Hub Community</Link>.
-              We&apos;re happy to assist you promptly.
+              You can reach our support team by emailing <Link
+              href='mailto:stanislav@vectorhub.bio'>stanislav@vectorhub.bio</Link> or getting help at our <Link
+              href='https://discourse.org'>VBD Hub Community</Link>. We&apos;re happy to assist you promptly.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -58,7 +58,7 @@ const FAQ = memo(function FAQ() {
           </AccordionSummary>
           <AccordionDetails>
             <Typography variant="body2" gutterBottom sx={{maxWidth: {sm: '100%', md: '70%'}}}>
-              Vector borne diseases (VBDs) are a significant global health concern, transmitted by vectors like
+              <strong>Vector borne diseases</strong> (<strong>VBDs</strong>) are a significant global health concern, transmitted by vectors like
               mosquitoes, ticks, and fleas. You should care because these diseases are expanding due to global travel
               and climate change, affecting millions worldwide. Understanding and taking preventative measures against
               VBDs can protect you, your family, and your community from illness, reduce healthcare costs, and improve
@@ -75,9 +75,30 @@ const FAQ = memo(function FAQ() {
           </AccordionSummary>
           <AccordionDetails>
             <Typography variant="body2" gutterBottom sx={{maxWidth: {sm: '100%', md: '70%'}}}>
-              Our product distinguishes itself through its adaptability, durability,
-              and innovative features. We prioritize user satisfaction and
-              continually strive to exceed expectations in every aspect.
+              The <strong>&quot;Upload file&quot;</strong> functionality of the table
+              supports <strong>CSV</strong> files.
+              The file upload dialog should only allow uploading files with this extension. Upon uploading a file, the
+              file is sent
+              to a server where it is processed and the data is added to the map. The server tries to parse as much of
+              the CSV as possible and skip broken lines. The feature is currently limited to process <strong>at most 50 rows</strong> in
+              any given file.
+              <br/>
+              <br/>
+              The CSV file should have the following row format: [vectorName],[vectorDate],latitude,longitude,notes.
+              The date should be in the <Link href="https://www.w3.org/TR/NOTE-datetime">ISO 8601 format</Link>. The
+              latitude and longitude are the only <strong>required</strong> columns. The
+              header row is <strong>required</strong> too. Please make sure the CSV is correctly formatted.
+              <br/>
+              <br/>
+              <span style={{fontFamily: 'Courier New'}}>
+                vectorName,vectorDate,latitude,longitude,notes<br/>
+                Aedes aegypti,Sun Feb 25 2020 20:58:13,-37,-75,Yellow fever vector<br/>
+                Mepraia spinolai,Sun Feb 25 2024 20:58:13,-25,10,Chagas disease vector<br/>
+                Ixodes scapularis,Sun Feb 10 2024 10:58:13,-37,-05,
+              </span>
+              <br/>
+              <br/>
+              An <Link href='/example.csv'>example file</Link> is available for download here.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -88,15 +109,14 @@ const FAQ = memo(function FAQ() {
             id="panel4d-header"
           >
             <Typography component="h3" variant="subtitle2">
-              Is there a warranty on the product, and what does it cover?
+              What is this all about?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography variant="body2" gutterBottom sx={{maxWidth: {sm: '100%', md: '70%'}}}>
-              Yes, our product comes with a [length of warranty] warranty. It covers
-              defects in materials and workmanship. If you encounter any issues
-              covered by the warranty, please contact our customer support for
-              assistance.
+              This website is all about empowering you to fight disease vectors. Upload your sightings of these insects
+              or animals, visualize their spread on our interactive map, and gain crucial insights to guide prevention
+              strategies. Join a community effort to track these vectors and protect public health.
             </Typography>
           </AccordionDetails>
         </Accordion>
