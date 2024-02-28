@@ -21,7 +21,7 @@ import Container from "@mui/material/Container";
 import {memo, useState} from "react";
 import FileUpload from "@/components/FileUpload";
 import Box from "@mui/material/Box";
-import {styled} from "@mui/material";
+import {Alert, Snackbar, styled} from "@mui/material";
 
 const roles = ['Market', 'Finance', 'Development'];
 const randomRole = () => {
@@ -180,7 +180,7 @@ export const demoRows = [
 ];
 
 const EditToolbar = memo(function EditToolbar(props) {
-  const {onNewRows, setRowModesModel, fieldToFocus, dataRows} = props;
+  const {onNewRows, setRowModesModel, fieldToFocus, dataRows, launchSnackbar} = props;
   const handleAdd = () => {
     const id = randomId();
     onNewRows((oldRows) => [...oldRows, {id, isNew: true}]);
@@ -203,14 +203,16 @@ const EditToolbar = memo(function EditToolbar(props) {
 
       if (response.ok) {
         const data = await parseJsonResponseWithDates(response);
-        console.log('Processed CSV data:', data);
         // Handle the processed data
         onNewRows([...data, ...dataRows]);  // TODO validation
+        launchSnackbar('CSV uploaded successfully', 'success');
       } else {
         console.error('Error processing CSV:', response.statusText);
+        launchSnackbar('Ooops! Something is wrong with the file.', 'error');
       }
     } catch (error) {
       console.error('Error uploading or processing CSV:', error);
+      launchSnackbar('Ooops! Error uploading or processing CSV.', 'error');
     }
   }
 
@@ -231,10 +233,10 @@ const AdvancedTable = memo(
       dataColumns = demoColumns,
       showActionsHeader = false,
       onNewRows,
-      fieldToFocus,
-      validateRow
+      fieldToFocus
     }) {
     const [rowModesModel, setRowModesModel] = useState({});
+    const [snackbar, setSnackbar] = useState({show: false, message: '', severity: 'success'});
 
 
     const handleRowEditStop = (params, event) => {
@@ -249,7 +251,6 @@ const AdvancedTable = memo(
 
     const handleSaveClick = (id) => () => {
       setRowModesModel({...rowModesModel, [id]: {mode: GridRowModes.View}});
-      validateRow(dataRows.filter((r) => r.id === id));
     };
 
     const handleDeleteClick = (id) => () => {
@@ -327,6 +328,18 @@ const AdvancedTable = memo(
       },
     },];
 
+    const launchSnackbar = (message, severity) => {
+      setSnackbar({...snackbar, show: false});
+      setSnackbar({show: true, message, severity});
+    }
+
+    const handleSnackbarClose = (event, reason) => {
+      if (reason === 'clickaway') {
+        return;
+      }
+      setSnackbar({...snackbar, show: false});
+    };
+
     return <>
       <Container sx={{marginBottom: '15px', width: '100%', height: 414.5, '& .scientific-name': {fontStyle: 'italic'}}}>
         <DataGrid
@@ -339,7 +352,7 @@ const AdvancedTable = memo(
           onRowModesModelChange={handleRowModesModelChange}
           onRowEditStop={handleRowEditStop}
           processRowUpdate={processRowUpdate}
-          onProcessRowUpdateError={(e) => console.log('<AdvancadeTable>: ', e)}
+          onProcessRowUpdateError={(e) => console.log('<AdvancadeTable>: ', e)}  // TODO look at
           initialState={{
             pagination: {paginationModel: {pageSize: 5}},
           }}
@@ -348,10 +361,16 @@ const AdvancedTable = memo(
             toolbar: EditToolbar, noRowsOverlay: CustomNoRowsOverlay
           }}
           slotProps={{
-            toolbar: {onNewRows, setRowModesModel, fieldToFocus, dataRows},
+            toolbar: {onNewRows, setRowModesModel, fieldToFocus, dataRows, launchSnackbar},
           }}
         />
       </Container>
+      <Snackbar open={snackbar.show} autoHideDuration={5000} onClose={handleSnackbarClose}
+                anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}>
+        <Alert onClose={handleSnackbarClose} severity={snackbar.severity} variant="filled" sx={{width: '100%'}}>
+          {snackbar.message}
+        </Alert>
+      </Snackbar>
     </>;
   });
 export default AdvancedTable

@@ -106,16 +106,10 @@ export default function Home() {
     setSnackbar({...snackbar, show: false});
   };
 
-  // TODO remove
-  const validateRow = ([row]) => {
-    console.log('VALIDATING', row)
-  }
-
   return <>
     <TopAppBar mode={isDarkMode ? 'dark' : 'light'} toggleColorMode={toggle}/>
     <Hero/>
-    <AdvancedTable dataColumns={columns} dataRows={rows} onNewRows={handleNewRows} fieldToFocus={'vectorName'}
-                   validateRow={validateRow}/>
+    <AdvancedTable dataColumns={columns} dataRows={rows} onNewRows={handleNewRows} fieldToFocus={'vectorName'}/>
     <Map markers={markersData} wheelZoom={true} isDarkMode={isDarkMode}/>
     <Features/>
     <Divider/>

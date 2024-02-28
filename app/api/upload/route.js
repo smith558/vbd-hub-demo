@@ -16,7 +16,9 @@ export async function POST(request) {
 
     // Process your CSV records here
     const csvLines = extractCsv(body);
-    console.log(csvLines);
+    if (csvLines.length === 0) {
+      throw new Error('No valid CSV lines found');
+    }
 
     return new Response(JSON.stringify(csvLines), {
       headers: {'Content-Type': 'application/json'}, status: 200,

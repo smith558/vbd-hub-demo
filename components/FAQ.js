@@ -114,8 +114,8 @@ const FAQ = memo(function FAQ() {
           </AccordionSummary>
           <AccordionDetails>
             <Typography variant="body2" gutterBottom sx={{maxWidth: {sm: '100%', md: '70%'}}}>
-              This website is all about empowering you to fight disease vectors. Upload your sightings of these insects
-              or animals, visualize their spread on our interactive map, and gain crucial insights to guide prevention
+              This website is all about empowering you to fight disease vectors. Upload your sightings of these
+              organisms, visualize their spread on our interactive map, and gain crucial insights to guide prevention
               strategies. Join a community effort to track these vectors and protect public health.
             </Typography>
           </AccordionDetails>
