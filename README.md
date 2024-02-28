@@ -65,3 +65,7 @@
 ## Performance benchmarking
 https://pagespeed.web.dev/analysis/https-www-vectorhub-bio/htztfpnesq?form_factor=desktop
 ![image](https://github.com/smith558/vbd-hub-demo/assets/44023416/376e8c57-2438-49a4-b403-695279be6b94)
+
+## Security benchmarking
+https://www.ssllabs.com/ssltest/analyze.html?d=vectorhub.bio&s=2606%3a4700%3a3034%3a0%3a0%3a0%3aac43%3a8f6a&latest
+![Screenshot from 2024-02-28 23-32-07](https://github.com/smith558/vbd-hub-demo/assets/44023416/eb1183b2-787e-45b1-acfb-f28c69744a31)
