@@ -1,17 +1,18 @@
 import { alpha } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 
+// Updated to a green palette
 export const brand = {
-  50: '#F0F7FF',
-  100: '#CEE5FD',
-  200: '#9CCCFC',
-  300: '#55A6F6',
-  400: '#0A66C2',
-  500: '#0959AA',
-  600: '#064079',
-  700: '#033363',
-  800: '#02294F',
-  900: '#021F3B',
+  50: '#F6FEF6',
+  100: '#E3FBE3',
+  200: '#C7F7C7',
+  300: '#A1E8A1',
+  400: '#51BC51',
+  500: '#1F7A1F',
+  600: '#136C13',
+  700: '#0A470A',
+  800: '#042F04',
+  900: '#021D02',
 };
 
 export const secondary = {
@@ -57,15 +58,15 @@ const getDesignTokens = (mode) => ({
   palette: {
     mode,
     primary: {
-      light: brand[200],
-      main: brand[500],
-      dark: brand[800],
-      contrastText: brand[50],
+      light: green[200],
+      main: green[500],
+      dark: green[800],
+      contrastText: green[50],
       ...(mode === 'dark' && {
-        contrastText: brand[100],
-        light: brand[300],
-        main: brand[400],
-        dark: brand[800],
+        contrastText: green[100],
+        light: green[300],
+        main: green[400],
+        dark: green[800],
       }),
     },
     secondary: {
@@ -123,9 +124,9 @@ const getDesignTokens = (mode) => ({
       ...(mode === 'dark' && { primary: '#fff', secondary: gray[400] }),
     },
     action: {
-      selected: `${alpha(brand[200], 0.2)}`,
+      selected: `${alpha(green[200], 0.2)}`,
       ...(mode === 'dark' && {
-        selected: alpha(brand[800], 0.2),
+        selected: alpha(green[800], 0.2),
       }),
     },
   },
