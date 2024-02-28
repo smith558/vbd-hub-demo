@@ -4,6 +4,9 @@
   <img src="./public/favicon.png" alt="Image Description" width="200">
 </center>
 
+![image](https://github.com/smith558/vbd-hub-demo/assets/44023416/fe48aed7-6b6c-4b47-b454-a6780ba56142)
+
+
 - total time spent: ~ 40 hours
 - live on [vectorhub.bio](https://vectorhub.bio/)
 - staging domain [vbd-hub-demo.vercel.app](https://vbd-hub-demo.vercel.app/)
