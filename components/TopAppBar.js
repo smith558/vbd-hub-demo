@@ -55,7 +55,7 @@ const TopAppBar = memo(function AppAppBar({mode, toggleColorMode}) {
           <Box sx={{flexGrow: 1, display: 'flex', alignItems: 'center', ml: '-18px', px: 0}}>
             <img
               // TODO perhaps swap for VectorByte logo
-              src={'https://upload.wikimedia.org/wikipedia/en/3/32/Logo_for_Imperial_College_London.svg'}
+              src={'Imperial_College_London.svg'}
               style={{width: '100px', height: 'auto', marginLeft: '20px', marginRight: '20px'}}
               alt="logo of ICL"
             />

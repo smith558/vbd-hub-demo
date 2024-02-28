@@ -21,26 +21,26 @@ const items = [{
   icon: <PlaceIcon/>,
   title: 'Sighting markers',
   description: 'The web application allows you to upload sightings of vectors of diseases and visualize their spread on an interactive map.',
-  imageLight: 'url("/map-light.png")',
-  imageDark: 'url("/map-dark.png")',
+  imageLight: 'url("/map-light.avif")',
+  imageDark: 'url("/map-dark.avif")',
 }, {
   icon: <CloudIcon/>,
   title: 'Real time weather layers',
   description: 'Try various real time weather layers to draw relationships. We have temperature, precipitation, and more.',
-  imageLight: 'url("/weather-light.png")',
-  imageDark: 'url("/weather-dark.png")',
+  imageLight: 'url("/weather-light.avif")',
+  imageDark: 'url("/weather-dark.avif")',
 }, {
   icon: <StorageIcon/>,
   title: 'Browser persistence',
   description: 'Need to take a break? No worries, your data is saved in the browser and will be there when you come back.',
-  imageLight: 'url("/table-light.png")',
-  imageDark: 'url("/table-dark.png")',
+  imageLight: 'url("/table-light.avif")',
+  imageDark: 'url("/table-dark.avif")',
 }, {
   icon: <UploadFileIcon/>,
   title: 'Bulk upload',
   description: 'Use the bulk upload feature to upload a CSV file with sightings of vectors of diseases and save yourself some valuable time.',
-  imageLight: 'url("/csv-light.png")',
-  imageDark: 'url("/csv-dark.png")',
+  imageLight: 'url("/csv-light.avif")',
+  imageDark: 'url("/csv-dark.avif")',
 },];
 
 const Features = memo(function Features() {
