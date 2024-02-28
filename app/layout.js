@@ -30,7 +30,7 @@ export default function RootLayout({children}) {
     </head>
     <body>
     <LayoutContext.Provider value={{isDarkMode, toggle}}>
-    <AppRouterCacheProvider options={{enableCssLayer: true}}>
+      <AppRouterCacheProvider options={{enableCssLayer: true}}>
         <ThemeProvider theme={theme}>
           <CssBaseline/>
           {children}
