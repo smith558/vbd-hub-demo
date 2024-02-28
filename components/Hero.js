@@ -32,8 +32,8 @@ const Hero = memo(function Hero() {
             &nbsp;Hub
           </Typography>
           <Typography variant="body1" textAlign="center" color="text.secondary">
-            Join the collaborative fight against and research of disease vectors. Our mapping platform empowers you to share
-            sightings, analyze patterns, and drive impactful prevention strategies.
+            Join the <Typography sx={{color: (theme) => theme.palette.mode === 'light' ? 'primary.main' : 'primary.light'}} component="span">collaborative fight against and research of disease vectors</Typography>. Our mapping platform empowers you to share
+            sightings, analyze patterns, and drive impactful prevention strategies. Start by adding a vector sighting with its <em>latitude</em> and <em>longitude</em> coordinates.
           </Typography>
         </Stack>
       </Container>

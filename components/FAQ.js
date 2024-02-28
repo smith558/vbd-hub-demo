@@ -84,7 +84,7 @@ const FAQ = memo(function FAQ() {
               any given file.
               <br/>
               <br/>
-              The CSV file should have the following row format: [vectorName],[vectorDate],latitude,longitude,notes.
+              The CSV file should have the following row format: [vectorName],[vectorDate],latitude,longitude,[notes].
               The date should be in the <Link href="https://www.w3.org/TR/NOTE-datetime">ISO 8601 format</Link>. The
               latitude and longitude are the only <strong>required</strong> columns. The
               header row is <strong>required</strong> too. Please make sure the CSV is correctly formatted.

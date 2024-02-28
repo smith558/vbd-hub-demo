@@ -5,32 +5,42 @@ import Chip from '@mui/material/Chip';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
+import UploadFileIcon from '@mui/icons-material/UploadFile';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
+import CloudIcon from '@mui/icons-material/Cloud';
+import StorageIcon from '@mui/icons-material/Storage';
 import DevicesRoundedIcon from '@mui/icons-material/DevicesRounded';
 import EdgesensorHighRoundedIcon from '@mui/icons-material/EdgesensorHighRounded';
+import PlaceIcon from '@mui/icons-material/Place';
 import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
 import {memo, useState} from "react";
 
 const items = [{
-  icon: <ViewQuiltRoundedIcon/>,
-  title: 'Dashboard',
-  description: 'This item could provide a snapshot of the most important metrics or data points related to the product.',
-  imageLight: 'url("/map.png")',
-  imageDark: 'url("/map.png")',
+  icon: <PlaceIcon/>,
+  title: 'Sighting markers',
+  description: 'The web application allows you to upload sightings of vectors of diseases and visualize their spread on an interactive map.',
+  imageLight: 'url("/map-light.png")',
+  imageDark: 'url("/map-dark.png")',
 }, {
-  icon: <EdgesensorHighRoundedIcon/>,
-  title: 'Mobile integration',
-  description: 'This item could provide information about the mobile app version of the product.',
-  imageLight: 'url("/map.png")',
-  imageDark: 'url("/map.png")',
+  icon: <CloudIcon/>,
+  title: 'Real time weather layers',
+  description: 'Try various real time weather layers to draw relationships. We have temperature, precipitation, and more.',
+  imageLight: 'url("/weather-light.png")',
+  imageDark: 'url("/weather-dark.png")',
 }, {
-  icon: <DevicesRoundedIcon/>,
-  title: 'Available on all platforms',
-  description: 'This item could let users know the product is available on all platforms, such as web, mobile, and desktop.',
-  imageLight: 'url("/map.png")',
-  imageDark: 'url("/map.png")',
+  icon: <StorageIcon/>,
+  title: 'Browser persistence',
+  description: 'Need to take a break? No worries, your data is saved in the browser and will be there when you come back.',
+  imageLight: 'url("/table-light.png")',
+  imageDark: 'url("/table-dark.png")',
+}, {
+  icon: <UploadFileIcon/>,
+  title: 'Bulk upload',
+  description: 'Use the bulk upload feature to upload a CSV file with sightings of vectors of diseases and save yourself some valuable time.',
+  imageLight: 'url("/csv-light.png")',
+  imageDark: 'url("/csv-dark.png")',
 },];
 
 const Features = memo(function Features() {
@@ -157,8 +167,8 @@ const Features = memo(function Features() {
         }}>
           <Box sx={{
             m: 'auto',
-            width: 420,
-            height: 500,
+            height: '100%',
+            width: '100%',
             backgroundSize: 'cover',
             backgroundImage: (theme) => theme.palette.mode === 'light' ? items[selectedItemIndex].imageLight : items[selectedItemIndex].imageDark,
           }}
