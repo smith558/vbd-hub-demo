@@ -4,7 +4,7 @@
   <img src="./public/favicon.png" alt="Image Description" width="200">
 </center>
 
-- total time spent: 29 hours
+- total time spent: ~ 40 hours
 - live on [vectorhub.bio](https://vectorhub.bio/)
 - staging domain [vbd-hub-demo.vercel.app](https://vbd-hub-demo.vercel.app/)
 
@@ -26,6 +26,7 @@
 - [x] GitHub integration for automatic deployment
 - [x] feature previews integration (an [example](https://github.com/smith558/vbd-hub-demo/pull/4))
 - [x] firewall, DDoS & Bot protection, and CDN
+- [x] auto scalable front end and back end (can serve thousands of users simultaneously)
 
 ## Tech stack
 
@@ -45,7 +46,7 @@
 - [Node.js](https://nodejs.org/en/)
 - [Next.js](https://nextjs.org/)
 - [Vercel hosting](https://vercel.com/)
-- [Vercel Serverless Edge Functions](https://vercel.com/docs/functions)
+- [Vercel Edge Functions](https://vercel.com/docs/functions)
 - [GitHub deployment & previews - VercelBot](https://github.com/apps/vercel)
 - [namecheap](https://www.namecheap.com/)
 - [JSON](https://www.json.org/)
