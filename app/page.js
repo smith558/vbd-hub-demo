@@ -116,7 +116,7 @@ export default function Home() {
     <Hero/>
     <AdvancedTable dataColumns={columns} dataRows={rows} onNewRows={handleNewRows} fieldToFocus={'vectorName'}
                    validateRow={validateRow}/>
-    <Map markers={markersData} wheelZoom={true}/>
+    <Map markers={markersData} wheelZoom={true} isDarkMode={isDarkMode}/>
     <Features/>
     <Divider/>
     <FAQ/>
