@@ -6,6 +6,7 @@ import {createTheme, ThemeProvider} from "@mui/material/styles";
 import getTheme from "@/getTheme";
 import {createContext} from "react";
 import {useDarkMode} from "usehooks-ts";
+import { Analytics } from '@vercel/analytics/react';
 
 const metadata = {
   title: "VBD Hub", description: "This a VBD Hub.", icons: {
@@ -37,6 +38,7 @@ export default function RootLayout({children}) {
         <ThemeProvider theme={theme}>
           <CssBaseline/>
           {children}
+          <Analytics/>
         </ThemeProvider>
       </AppRouterCacheProvider>
     </LayoutContext.Provider>
