@@ -52,8 +52,7 @@ const Features = memo(function Features() {
       <Grid item xs={12} md={6}>
         <div>
           <Typography component="h2" variant="h4" color="text.primary">Features</Typography>
-          <Typography variant="body1" color="text.secondary" sx={{mb: {xs: 2, sm: 4}}}
-          >
+          <Typography variant="body1" color="text.secondary" sx={{mb: {xs: 2, sm: 4}}}>
             Upload your sightings of vectors of diseases, visualize their spread on our interactive map,
             and gain crucial insights to guide prevention strategies. Join a community effort to track these vectors and
             protect public health.
@@ -61,8 +60,7 @@ const Features = memo(function Features() {
         </div>
         <Grid container item gap={1} sx={{display: {xs: 'auto', sm: 'none'}}}>
           {items.map(({title}, index) =>
-            <Chip key={index} label={title} onClick={() => handleItemClick(index)} sx={{
-              borderColor: (theme) => {
+            <Chip key={index} label={title} onClick={() => handleItemClick(index)} sx={{borderColor: (theme) => {
                 if (theme.palette.mode === 'light') {
                   return selectedItemIndex === index ? 'primary.light' : '';
                 }
@@ -133,8 +131,7 @@ const Features = memo(function Features() {
                 gap: 2.5,
               }}
               >
-                <Box sx={{
-                  color: (theme) => {
+                <Box sx={{color: (theme) => {
                     if (theme.palette.mode === 'light') {
                       return selectedItemIndex === index ? 'primary.main' : 'grey.300';
                     }

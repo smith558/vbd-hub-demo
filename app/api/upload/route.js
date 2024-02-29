@@ -28,6 +28,7 @@ export async function POST(request) {
   }
 }
 
+// TODO perhaps make more robust in the future
 function extractCsv(multipartData) {
   // Define the boundary using the first line of the input
   const boundary = multipartData.split('\r\n', 1)[0];

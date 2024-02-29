@@ -95,7 +95,7 @@ function CustomNoRowsOverlay() {
           </g>
         </g>
       </svg>
-      <Box sx={{ mt: 1 }}>No vectors</Box>
+
     </StyledGridOverlay>
   );
 }

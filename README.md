@@ -7,7 +7,7 @@
 ![image](https://github.com/smith558/vbd-hub-demo/assets/44023416/fe48aed7-6b6c-4b47-b454-a6780ba56142)
 
 
-- total time spent: ~ 40 hours
+- total time spent: ~ 36 hours
 - live on [vectorhub.bio](https://vectorhub.bio/)
 - staging domain [vbd-hub-demo.vercel.app](https://vbd-hub-demo.vercel.app/)
 
@@ -30,6 +30,7 @@
 - [x] feature previews integration (an [example](https://github.com/smith558/vbd-hub-demo/pull/4))
 - [x] firewall, DDoS & Bot protection, and CDN
 - [x] auto scalable front end and back end (can serve thousands of users simultaneously)
+- [x] cookie-less analytics
 
 ## Tech stack
 

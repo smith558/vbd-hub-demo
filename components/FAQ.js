@@ -70,13 +70,12 @@ const FAQ = memo(function FAQ() {
         <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
           <AccordionSummary expandIcon={<ExpandMoreIcon/>} aria-controls="panel3d-content" id="panel3d-header">
             <Typography component="h3" variant="subtitle2">
-              What is an accepted file format for uploading data to the map?
+              What is the accepted file format for uploading data?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography variant="body2" gutterBottom sx={{maxWidth: {sm: '100%', md: '70%'}}}>
-              The <strong>&quot;Upload file&quot;</strong> functionality of the table
-              supports <strong>CSV</strong> files.
+              The <strong>&quot;Upload file&quot;</strong> table functionality supports <strong>CSV</strong> files.
               The file upload dialog should only allow uploading files with this extension. Upon uploading a file, the
               file is sent
               to a server where it is processed and the data is added to the map. The server tries to parse as much of

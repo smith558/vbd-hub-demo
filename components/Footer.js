@@ -9,16 +9,12 @@ import Link from "@mui/material/Link";
 import NextLink from "next/link";
 import {memo} from "react";
 
-const logoStyle = {
-  width: '140px', height: 'auto',
-};
-
 function Copyright() {
   return <>
     <Typography variant="body2" color="text.secondary" mt={1}>
-      {'Copyright © '}
+      {'Coded by '}
       <Link href="https://stanislav.gq/" target='_blank' rel="noopener">Stanley&nbsp;</Link>
-      {new Date().getFullYear()}
+      {'© '}{new Date().getFullYear()}
     </Typography>
   </>;
 }
@@ -42,13 +38,7 @@ const Footer = memo(function Footer() {
           <Link component={NextLink} href='/terms' color="text.secondary">Terms of Service</Link>
           <Copyright/>
         </div>
-        <Stack
-          direction="row"
-          justifyContent="left"
-          spacing={1}
-          useFlexGap
-          sx={{color: 'text.secondary'}}
-        >
+        <Stack direction="row" justifyContent="left" spacing={1} useFlexGap sx={{color: 'text.secondary'}}>
           <IconButton
             color="inherit"
             href="https://github.com/smith558"
@@ -59,8 +49,7 @@ const Footer = memo(function Footer() {
           >
             <FacebookIcon/>
           </IconButton>
-          <IconButton
-            color="inherit"
+          <IconButton color="inherit"
             href="https://www.linkedin.com/in/stanislav-modrak/"
             target='_blank'
             aria-label="LinkedIn"

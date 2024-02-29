@@ -95,7 +95,6 @@ export default function Home() {
     }));
 
   const handleNewRows = (newRows) => {
-    console.log('new rows', newRows);
     setRows(newRows);
   }
 
