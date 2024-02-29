@@ -19,7 +19,7 @@ export const LayoutContext = createContext({
 });
 
 export default function RootLayout({children}) {
-  const {isDarkMode, toggle, enable, disable} = useDarkMode();
+  const {isDarkMode, toggle, enable, disable} = useDarkMode({initializeWithValue: true});
   const theme = createTheme(getTheme(isDarkMode ? 'dark' : 'light'));
 
   return <>
