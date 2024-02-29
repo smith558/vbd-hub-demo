@@ -7,6 +7,7 @@ import getTheme from "@/getTheme";
 import {createContext} from "react";
 import {useDarkMode} from "usehooks-ts";
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const metadata = {
   title: "VBD Hub", description: "This a VBD Hub.", icons: {
@@ -38,6 +39,7 @@ export default function RootLayout({children}) {
         <ThemeProvider theme={theme}>
           <CssBaseline/>
           {children}
+          <SpeedInsights/>
           <Analytics/>
         </ThemeProvider>
       </AppRouterCacheProvider>
