@@ -4,17 +4,12 @@ import Card from '@mui/material/Card';
 import Chip from '@mui/material/Chip';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import CloudIcon from '@mui/icons-material/Cloud';
 import StorageIcon from '@mui/icons-material/Storage';
-import DevicesRoundedIcon from '@mui/icons-material/DevicesRounded';
-import EdgesensorHighRoundedIcon from '@mui/icons-material/EdgesensorHighRounded';
 import PlaceIcon from '@mui/icons-material/Place';
-import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
 import {memo, useState} from "react";
 
 const items = [{

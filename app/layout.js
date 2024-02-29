@@ -13,7 +13,10 @@ const metadata = {
   }
 };
 
-export const LayoutContext = createContext();
+export const LayoutContext = createContext({
+  isDarkMode: false,
+  toggle: () => {}
+});
 
 export default function RootLayout({children}) {
   const {isDarkMode, toggle, enable, disable} = useDarkMode();
